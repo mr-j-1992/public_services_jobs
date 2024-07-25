@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /tmp/public_services/test
+cd /tmp/public_services_jobs/test
 tar -zxvf dcgm-exporter-3.3.6-3.4.2.tar.gz
 cd dcgm-exporter-3.3.6-3.4.2
 make binary
