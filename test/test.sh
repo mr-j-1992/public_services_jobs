@@ -1,6 +1,7 @@
 #!/bin/bash
 echo "Service start"
+while true
+do
 echo $1 $2
 sleep 5
-echo "Service exit"
-exit 1
+done
