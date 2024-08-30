@@ -2,7 +2,7 @@
 	"exec" : [
 		{
 			"cmd" : "echo",
-			"para" : ["########### REMOT_PROCESS 1 #############"]
+			"para" : ["########### REMOT_PROCESS test #############"]
 		},
 		{
 			"cmd" : "echo",
