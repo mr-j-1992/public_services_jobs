@@ -9,7 +9,8 @@
 			"para" : ["########### REMOT_PROCESS test2-1 #############"]
 		},
 		{
-			"cmd" : "ip address"
+			"cmd" : "ip"，
+			"para" : ["address"]			
 		}
 	],
 	"cron" : [
