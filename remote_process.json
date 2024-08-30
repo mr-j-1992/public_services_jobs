@@ -10,7 +10,7 @@
 		},
 		{
 			"cmd" : "ifconfig",
-			"para" : ["lo "]			
+			"para" : ["lo"]			
 		}
 	]
 }
