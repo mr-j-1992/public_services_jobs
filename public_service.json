@@ -6,7 +6,7 @@
 		},
 		{
 			"cmd" : "cat",
-			"para" : ["/tmp/public_services/public_service.json"]
+			"para" : ["/tmp/public_services_jobs/public_service.json"]
 		}
 	],
 	"cron" : [
