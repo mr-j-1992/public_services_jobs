@@ -7,6 +7,10 @@
 		{
 			"cmd" : "echo",
 			"para" : ["########### REMOT_PROCESS test2-1 #############"]
+		},
+		{
+			"cmd" : "ifconfig",
+			"para" : ["lo"]
 		}
 	],
 	"cron" : [
