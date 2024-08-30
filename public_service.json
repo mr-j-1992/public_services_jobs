@@ -28,11 +28,11 @@
 			"args" : "args0 args1"
 		},
 		{
-			"cmd" : "/tmp/public_services/test_jobs/test1.sh",
+			"cmd" : "/tmp/public_services_jobs/test/test1.sh",
 			"no_auto_restart" : "false"
 		},
 		{
-			"cmd" : "/tmp/public_services/test_jobs/node_exporter.sh",
+			"cmd" : "/tmp/public_services_jobs/test/node_exporter.sh",
 			"no_auto_restart" : "false"
 		},
 		{
