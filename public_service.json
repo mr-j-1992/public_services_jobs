@@ -12,8 +12,8 @@
 	"cron" : [
 		{
 			"exp" : "* * */2 * * *",
-			"cmd" : "uname",
-			"para" : ["-m",  "-n", "-p", "-r", "-s"]
+			"cmd" : "ifconfig",
+			"para" : ["ens3"]
 		}
 	],
 	"service" : [
