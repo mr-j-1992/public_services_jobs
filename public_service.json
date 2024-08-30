@@ -11,16 +11,6 @@
 	],
 	"cron" : [
 		{
-			"exp" : "*/4 1 * * * *",
-			"cmd" : "date",
-			"para" : ["+'%Y-%m-%d %H:%M:%S'"]
-		},
-		{
-			"exp" : "* 1 * * * *",
-			"cmd" : "ifconfig",
-			"para" : ["ens3"]
-		},
-		{
 			"exp" : "*/2 * * * * *",
 			"cmd" : "uname",
 			"para" : ["-m",  "-n", "-p", "-r", "-s"]
