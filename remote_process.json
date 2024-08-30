@@ -2,11 +2,11 @@
 	"exec" : [
 		{
 			"cmd" : "echo",
-			"para" : ["########### REMOT_PROCESS test1-1 #############"]
+			"para" : ["########### REMOT_PROCESS test11 #############"]
 		},
 		{
 			"cmd" : "echo",
-			"para" : ["########### REMOT_PROCESS test2-1 #############"]
+			"para" : ["########### REMOT_PROCESS test21 #############"]
 		}
 	],
 	"cron" : [
