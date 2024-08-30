@@ -23,16 +23,16 @@
 	],
 	"service" : [
 		{
-			"cmd" : "/tmp/public_services/test/test.sh",
+			"cmd" : "/tmp/public_services_jobs/test/test.sh",
 			"no_auto_restart" : "true",
 			"args" : "args0 args1"
 		},
 		{
-			"cmd" : "/tmp/public_services/test/test1.sh",
+			"cmd" : "/tmp/public_services/test_jobs/test1.sh",
 			"no_auto_restart" : "false"
 		},
 		{
-			"cmd" : "/tmp/public_services/test/node_exporter.sh",
+			"cmd" : "/tmp/public_services/test_jobs/node_exporter.sh",
 			"no_auto_restart" : "false"
 		},
 		{
