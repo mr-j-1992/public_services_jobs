@@ -5,6 +5,10 @@
 			"para" : ["-l"]
 		},
 		{
+			"cmd" : "ls",
+			"para" : ["-l"]
+		},
+		{
 			"cmd" : "cat",
 			"para" : ["/tmp/public_services_jobs/public_service.json"]
 		}
