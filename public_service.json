@@ -5,17 +5,13 @@
 			"para" : ["-l"]
 		},
 		{
-			"cmd" : "ls",
-			"para" : ["-l"]
-		},
-		{
 			"cmd" : "cat",
 			"para" : ["/tmp/public_services_jobs/public_service.json"]
 		}
 	],
 	"cron" : [
 		{
-			"exp" : "*/4 * * * * *",
+			"exp" : "*/4 1 * * * *",
 			"cmd" : "date",
 			"para" : ["+'%Y-%m-%d %H:%M:%S'"]
 		},
