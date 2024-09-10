@@ -45,14 +45,14 @@ fi
 
 # 计算文件的 MD5 值
 echo "Calculating MD5 for $FILE1..."
-MD5_FILE1=$(md5sum $FILE1 | awk '{ print $1 }')
+MD5_FILE1=$(md5sum $FILE1)
 if [ $? -ne 0 ]; then
     echo "Failed to calculate MD5 for $FILE1" | mail -s "$subject" "$recipient"
     exit 1
 fi
 
 echo "Calculating MD5 for $FILE2..."
-MD5_FILE2=$(md5sum $FILE2 | awk '{ print $1 }')
+MD5_FILE2=$(md5sum $FILE2)
 if [ $? -ne 0 ]; then
     echo "Failed to calculate MD5 for $FILE2" | mail -s "$subject" "$recipient"
     exit 1
