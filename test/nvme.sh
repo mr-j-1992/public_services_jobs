@@ -62,5 +62,9 @@ fi
 echo "MD5 for $FILE1: $MD5_FILE1"
 echo "MD5 for $FILE2: $MD5_FILE2"
 
+rm -rf $FILE1
+rm -rf $FILE2
+
+
 # 发送成功邮件
 echo "File generation and MD5 calculation completed successfully." | mail -s "服务器[nvme]初始状态正常" "$recipient"
