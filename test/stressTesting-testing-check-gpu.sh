@@ -36,6 +36,15 @@ for i in {0..2};do
         body="${body} - 检测到卡的功率不等于 450W\n"
     fi
 
+    temps=$(nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits)
+    # 初始化标志为 pass
+    # 遍历每个 GPU 的温度
+    for temp in $temps; do
+        # 如果有温度超过 90 度，则设置状态为 fail
+        if [ "$temp" -gt 90 ]; then
+            body="${body} - 检测到卡的温度高于 90\n"
+        fi
+    done
     # 如果 body 发生了变化，说明有异常，发送邮件
     if [ "$body" != "服务器上的NVIDIA GPU状态异常，详情如下：\n" ]; then
         body="${body} - $nvidia_output"
