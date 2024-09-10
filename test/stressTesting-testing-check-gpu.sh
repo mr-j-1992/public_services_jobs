@@ -1,5 +1,5 @@
 #!/bin/bash
-for i in {0..3};do
+for i in {0..2};do
     sleep 30
     expected_gpu_count=8
     # 配置邮件地址
