@@ -1,4 +1,4 @@
-for i in {0..3};do
+for i in {0..2};do
     sleep 30
     # 配置邮件地址
     subject="压测第$i次检测服务器[nvme]状态异常"
