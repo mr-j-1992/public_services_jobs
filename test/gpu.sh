@@ -2,7 +2,7 @@
 expected_gpu_count=8
 # 配置邮件地址
 recipient="lvjiang@dayudpu.com"
-subject="服务器初始状态异常"
+subject="服务器[GPU]初始状态异常"
 body="服务器上的NVIDIA GPU状态异常，详情如下：\n"
 
 # 运行 nvidia-smi 并保存输出
@@ -32,9 +32,8 @@ if [ "$body" != "服务器上的NVIDIA GPU状态异常，详情如下：\n" ]; t
     body="${body} - $nvidia_output"
     echo -e "$body" | mail -s "$subject" "$recipient"
 else
-    subject="服务器初始状态正常"
+    subject="服务器[GPU]初始状态正常"
     body="服务器上的NVIDIA GPU状态正常，详情如下：\n"
     body="${body} - $nvidia_output"
     echo -e "$body" | mail -s "$subject" "$recipient"
-
 fi
