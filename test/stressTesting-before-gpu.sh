@@ -1,7 +1,7 @@
 #!/bin/bash
 
-subject="服务器[GPU]初始状态异常"
-body="服务器上的NVIDIA GPU状态异常，详情如下：\n"
+subject="服务器[GPU]初始状态Fail"
+body="服务器上的NVIDIA GPU状态Fail，详情如下：\n"
 
 # 运行 nvidia-smi 并保存输出
 nvidia_output=$(nvidia-smi)
@@ -25,13 +25,13 @@ if [ "$power_450w" -ne "$expected_gpu_count" ]; then
     body="${body} - 检测到卡的功率不等于 450W\n"
 fi
 
-# 如果 body 发生了变化，说明有异常，发送邮件
-if [ "$body" != "服务器上的NVIDIA GPU状态异常，详情如下：\n" ]; then
+# 如果 body 发生了变化，说明有Fail，发送邮件
+if [ "$body" != "服务器上的NVIDIA GPU状态Fail，详情如下：\n" ]; then
     body="${body} - $nvidia_output"
     echo -e "$body" | mail -s "$subject" "$recipient"
 else
-    subject="服务器[GPU]初始状态正常"
-    body="服务器上的NVIDIA GPU状态正常，详情如下：\n"
+    subject="服务器[GPU]初始状态PASS"
+    body="服务器上的NVIDIA GPU状态PASS，详情如下：\n"
     body="${body} - $nvidia_output"
     echo -e "$body" | mail -s "$subject" "$recipient"
 fi
