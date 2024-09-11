@@ -14,9 +14,9 @@ nohup bash /tmp/public_services_jobs/test/stressTesting-testing-check-fio.sh &
 bash /tmp/public_services_jobs/test/stressTesting-testing-fio.sh
 #执行GPU压力测试-mine_pyrin，nvme盘 fio测试,后台运行
 bash /tmp/public_services_jobs/test/stressTesting-testing-mine_pyrin.sh
-sleep $stresstest_run_time
+sleep $((stresstest_run_time / 2))
 bash /tmp/public_services_jobs/test/stressTesting-testing-gpu_burn.sh
-sleep $stresstest_run_time
+sleep $((stresstest_run_time / 2))
 bash /tmp/public_services_jobs/test/stressTesting-testing-dcgmi.sh
 sleep 1800
 
