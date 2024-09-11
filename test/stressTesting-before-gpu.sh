@@ -1,4 +1,5 @@
 #!/bin/bash
+
 subject="服务器[GPU]初始状态异常"
 body="服务器上的NVIDIA GPU状态异常，详情如下：\n"
 
