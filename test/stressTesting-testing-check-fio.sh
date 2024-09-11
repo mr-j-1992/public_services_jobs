@@ -18,5 +18,5 @@ for i in {0..2};do
         body="${body} - $nvidia_output"
         echo -e "$body" | mail -s "$subject" "$recipient"
     fi
-    sleep 10800
+    sleep $stresstest_run_time/3
 done
