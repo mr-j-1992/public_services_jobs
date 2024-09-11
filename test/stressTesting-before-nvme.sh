@@ -16,7 +16,7 @@ umount $DEVICE1
 umount $DEVICE2
 
 mkfs.xfs -f $DEVICE1
-mkfs.xfs -f $DEVICE1
+mkfs.xfs -f $DEVICE2
 
 apt update
 apt install fio -y
