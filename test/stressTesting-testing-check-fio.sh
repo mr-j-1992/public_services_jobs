@@ -2,7 +2,7 @@
 
 sleep 120
 
-for i in {1..5};do
+for i in {1..4};do
     # 配置邮件地址
     subject="压测第$i次检测服务器[nvme]状态异常"
     body="服务器上的 fio 状态异常，详情如下：\n"
