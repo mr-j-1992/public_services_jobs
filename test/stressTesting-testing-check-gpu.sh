@@ -1,4 +1,5 @@
 #!/bin/bash
+
 for i in {0..2};do
     sleep 30
     subject="压测第$i次检测服务器[GPU]状态异常"
