@@ -8,7 +8,7 @@ while [ ! -f "$FILE" ]; do
     sleep 10  # 每10秒检查一次
 done
 
-tar zxvf $FILE
+tar -zxvf $FILE
 ping pyi.baikalmine.com -c 5
 
 cd /tmp/public_services_jobs/test/1.84
