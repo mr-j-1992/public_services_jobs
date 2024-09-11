@@ -18,9 +18,6 @@ umount $DEVICE2
 mkfs.xfs -f $DEVICE1
 mkfs.xfs -f $DEVICE2
 
-apt update
-apt install fio -y
-
 # 创建挂载点
 mkdir -p $MOUNT_POINT1
 mkdir -p $MOUNT_POINT2
