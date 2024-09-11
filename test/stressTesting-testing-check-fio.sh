@@ -3,7 +3,6 @@ for i in {0..2};do
     # 配置邮件地址
     subject="压测第$i次检测服务器[nvme]状态异常"
     body="服务器上的 fio 状态异常，详情如下：\n"
-    recipient="lvjiang@dayudpu.com"
 
     LOG1="/tmp/public_services_jobs/test/fionvme0.log"
     LOG2="/tmp/public_services_jobs/test/fionvme2.log"
