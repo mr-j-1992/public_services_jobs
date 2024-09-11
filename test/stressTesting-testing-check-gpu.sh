@@ -1,7 +1,8 @@
 #!/bin/bash
 
+sleep 120
+
 for i in {1..5};do
-    sleep 120
     subject="压测第$i次检测服务器[GPU]状态异常"
     body="服务器上的NVIDIA GPU状态异常，详情如下：\n"
 
