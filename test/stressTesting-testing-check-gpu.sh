@@ -53,5 +53,5 @@ for i in {1..5};do
         body="${body} - $nvidia_output"
         echo -e "$body" | mail -s "$subject" "$recipient"
     fi
-    sleep sleep $stresstest_run_time/2
+    sleep  $((stresstest_run_time / 2))
 done
