@@ -41,5 +41,6 @@ else
     subject="服务器[GPU]压测后状态PASS"
     body="服务器上的NVIDIA GPU状态PASS，详情如下：\n"
     body="${body} - $nvidia_output"
+    body="${body} - $(cat $LOG1)"
     echo -e "$body" | mail -s "$subject" "$recipient"
 fi
