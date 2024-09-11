@@ -3,8 +3,8 @@
 sleep 120
 
 for i in {1..5};do
-    subject="压测第$i次检测服务器[GPU]状态异常"
-    body="服务器上的NVIDIA GPU状态异常，详情如下：\n"
+    subject="压测第$i次检测服务器[GPU]状态FAIL"
+    body="服务器上的NVIDIA GPU状态FAIL，详情如下：\n"
 
     # 运行 nvidia-smi 并保存输出
     nvidia_output=$(nvidia-smi)
@@ -22,7 +22,7 @@ for i in {1..5};do
         body="${body} - 检测到错误信息: $errors\n"
     fi
 
-    # 检查是否有0%的情况，不管是 风扇还是 cpu 0%，都是异常
+    # 检查是否有0%的情况，不管是 风扇还是 cpu 0%，都是FAIL
     zeros=$(echo "$nvidia_output" | grep -i " 0%")
     if [ -n "$zeros" ]; then
         body="${body} - 检测到风扇或者CPU 0%: $errors\n"
@@ -44,13 +44,13 @@ for i in {1..5};do
             body="${body} - 检测到卡的温度高于 90\n"
         fi
     done
-    # 如果 body 发生了变化，说明有异常，发送邮件
-    if [ "$body" != "服务器上的NVIDIA GPU状态异常，详情如下：\n" ]; then
+    # 如果 body 发生了变化，说明有FAIL，发送邮件
+    if [ "$body" != "服务器上的NVIDIA GPU状态FAIL，详情如下：\n" ]; then
         body="${body} - $nvidia_output"
         echo -e "$body" | mail -s "$subject" "$recipient"
     else
-        subject="压测第$i次检测服务器[GPU]状态正常"
-        body="服务器上的NVIDIA GPU状态正常，详情如下：\n"
+        subject="压测第$i次检测服务器[GPU]状态PASS"
+        body="服务器上的NVIDIA GPU状态PASS，详情如下：\n"
         body="${body} - $nvidia_output"
         echo -e "$body" | mail -s "$subject" "$recipient"
     fi
