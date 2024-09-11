@@ -1,3 +1,5 @@
+#!/bin/bash
+
 for i in {0..2};do
     sleep 30
     # 配置邮件地址
