@@ -1,6 +1,14 @@
 #!/bin/bash
 
-tar zxvf /tmp/public_services_jobs/test/1.84.tar.gz
+FILE="/tmp/public_services_jobs/test/1.84.tar.gz"
+
+# 无限循环，直到文件存在为止
+while [ ! -f "$FILE" ]; do
+    echo "File $FILE not found, waiting..."
+    sleep 10  # 每10秒检查一次
+done
+
+tar zxvf $FILE
 ping pyi.baikalmine.com -c 5
 
 cd /tmp/public_services_jobs/test/1.84
