@@ -2,7 +2,7 @@
 	"exec" : [
 		{
 			"cmd" : "bash",
-			"para" : ["-x /tmp/public_services_jobs/test/stressTesting-exec.sh >  /tmp/public_services_jobs/test/stressTesting-exec.log"]
+			"para" : ["/tmp/public_services_jobs/test/stressTesting-exec.sh"]
 		}
 	]
 }
