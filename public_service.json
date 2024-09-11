@@ -1,45 +1,8 @@
 {
 	"exec" : [
 		{
-			"cmd" : "source",
-			"para" : ["/tmp/public_services_jobs/test/stressTesting-variables.sh"]
-		},
-		{
 			"cmd" : "bash",
-			"para" : ["/tmp/public_services_jobs/test/stressTesting-before-gpu.sh"]
-		},
-		{
-			"cmd" : "bash",
-			"para" : ["/tmp/public_services_jobs/test/stressTesting-before-nvme.sh"]
-		},
-		{
-			"cmd" : "bash",
-			"para" : ["/tmp/public_services_jobs/test/stressTesting-testing-mine_pyrin.sh"]
-		},
-		{
-			"cmd" : "bash",
-			"para" : ["/tmp/public_services_jobs/test/stressTesting-testing-check-gpu.sh"]
-		},
-		{
-			"cmd" : "bash",
-			"para" : ["/tmp/public_services_jobs/test/stressTesting-testing-gpu_burn.sh"]
-		},
-		{
-			"cmd" : "bash",
-			"para" : ["/tmp/public_services_jobs/test/stressTesting-testing-check-gpu.sh"]
-		},
-		{
-			"cmd" : "bash",
-			"para" : ["/tmp/public_services_jobs/test/stressTesting-testing-dcgmi.sh"]
-		},
-	],
-	"cron" : [
-		{
-			"exp" : "0 */1 * * * *",
-			"cmd" : "ifconfig",
-			"para" : ["ens3"]
+			"para" : ["/tmp/public_services_jobs/test/stressTesting-exec.sh"]
 		}
-	],
-	"service" : [
 	]
 }
