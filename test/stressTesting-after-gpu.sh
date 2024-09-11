@@ -1,7 +1,15 @@
 #!/bin/bash
 
-subject="服务器[GPU]初始状态FAIL"
+subject="服务器[GPU]压测后状态FAIL"
 body="服务器上的NVIDIA GPU状态FAIL，详情如下：\n"
+
+# 检查dcgmi日志是否有错误
+LOG1="/tmp/public_services_jobs/test/dcgmi.log"
+# 检查日志文件中的内容
+if grep -qiE "error|fail" "$LOG1" ; then
+    errorlog=$(grep -iE "error|fail" "$LOG1")
+    body="${body} - dcgmi检测到错误信息: $errorlog\n"
+fi
 
 # 运行 nvidia-smi 并保存输出
 nvidia_output=$(nvidia-smi)
@@ -30,7 +38,7 @@ if [ "$body" != "服务器上的NVIDIA GPU状态FAIL，详情如下：\n" ]; the
     body="${body} - $nvidia_output"
     echo -e "$body" | mail -s "$subject" "$recipient"
 else
-    subject="服务器[GPU]初始状态PASS"
+    subject="服务器[GPU]压测后状态PASS"
     body="服务器上的NVIDIA GPU状态PASS，详情如下：\n"
     body="${body} - $nvidia_output"
     echo -e "$body" | mail -s "$subject" "$recipient"
