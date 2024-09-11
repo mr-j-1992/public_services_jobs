@@ -1,7 +1,7 @@
 #!/bin/bash
 
 for i in {0..2};do
-    sleep 30
+    sleep 120
     subject="压测第$i次检测服务器[GPU]状态异常"
     body="服务器上的NVIDIA GPU状态异常，详情如下：\n"
 
@@ -53,5 +53,5 @@ for i in {0..2};do
         body="${body} - $nvidia_output"
         echo -e "$body" | mail -s "$subject" "$recipient"
     fi
-    sleep sleep $stresstest_run_time/3
+    sleep sleep $stresstest_run_time/2
 done
