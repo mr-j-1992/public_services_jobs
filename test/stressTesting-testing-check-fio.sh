@@ -4,7 +4,7 @@ sleep 120
 
 for i in {1..5};do
     # 配置邮件地址
-    subject="压测第$i次检测服务器[nvme]状态FAIL"
+    subject="!!!压测第$i次检测服务器[nvme]状态FAIL!!!"
     body="服务器上的 fio 状态FAIL，详情如下：\n"
 
     LOG1="/tmp/public_services_jobs/test/fionvme0.log"
