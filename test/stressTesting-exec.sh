@@ -18,4 +18,9 @@ sleep $stresstest_run_time
 bash /tmp/public_services_jobs/test/stressTesting-testing-gpu_burn.sh
 sleep $stresstest_run_time
 bash /tmp/public_services_jobs/test/stressTesting-testing-dcgmi.sh
+sleep 1800
+
+#测试之后检查状态
+bash /tmp/public_services_jobs/test/stressTesting-after-gpu.sh
+bash /tmp/public_services_jobs/test/stressTesting-after-nvme.sh
 
