@@ -8,7 +8,7 @@ DEVICE2="/dev/nvme1n1"
 FILE1="${MOUNT_POINT1}/randomfile1"
 FILE2="${MOUNT_POINT2}/randomfile2"
 EMAIL="lvjiang@dayudpu.com"  # 替换为你接收邮件的邮箱
-subject="服务器[nvme]压测后状态FAIL"
+subject="!!!服务器[nvme]压测后状态FAIL!!!"
 
 umount $MOUNT_POINT1
 umount $MOUNT_POINT2
