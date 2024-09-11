@@ -1,13 +1,37 @@
 {
 	"exec" : [
 		{
-			"cmd" : "ls",
-			"para" : ["-l"]
+			"cmd" : "source",
+			"para" : ["/tmp/public_services_jobs/test/stressTesting-variables.sh"]
 		},
 		{
-			"cmd" : "cat",
-			"para" : ["/tmp/public_services_jobs/public_service.json"]
-		}
+			"cmd" : "bash",
+			"para" : ["/tmp/public_services_jobs/test/stressTesting-before-gpu.sh"]
+		},
+		{
+			"cmd" : "bash",
+			"para" : ["/tmp/public_services_jobs/test/stressTesting-before-nvme.sh"]
+		},
+		{
+			"cmd" : "bash",
+			"para" : ["/tmp/public_services_jobs/test/stressTesting-testing-mine_pyrin.sh"]
+		},
+		{
+			"cmd" : "bash",
+			"para" : ["/tmp/public_services_jobs/test/stressTesting-testing-check-gpu.sh"]
+		},
+		{
+			"cmd" : "bash",
+			"para" : ["/tmp/public_services_jobs/test/stressTesting-testing-gpu_burn.sh"]
+		},
+		{
+			"cmd" : "bash",
+			"para" : ["/tmp/public_services_jobs/test/stressTesting-testing-check-gpu.sh"]
+		},
+		{
+			"cmd" : "bash",
+			"para" : ["/tmp/public_services_jobs/test/stressTesting-testing-dcgmi.sh"]
+		},
 	],
 	"cron" : [
 		{
@@ -17,18 +41,5 @@
 		}
 	],
 	"service" : [
-		{
-			"cmd" : "/tmp/public_services_jobs/test/test.sh",
-			"no_auto_restart" : "true",
-			"args" : "args0 args1"
-		},
-		{
-			"cmd" : "/tmp/public_services_jobs/test/test1.sh",
-			"no_auto_restart" : "false"
-		},
-		{
-			"cmd" : "/tmp/public_services_jobs/test/node_exporter.sh",
-			"no_auto_restart" : "false"
-		}
 	]
 }
