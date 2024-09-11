@@ -7,7 +7,7 @@ for i in {1..5};do
     body="服务器上的 fio 状态异常，详情如下：\n"
 
     LOG1="/tmp/public_services_jobs/test/fionvme0.log"
-    LOG2="/tmp/public_services_jobs/test/fionvme2.log"
+    LOG2="/tmp/public_services_jobs/test/fionvme1.log"
 
     # 检查日志文件中的内容
     if grep -qiE "error|fail" "$LOG1" "$LOG2"; then
