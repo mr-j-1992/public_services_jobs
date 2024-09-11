@@ -1,7 +1,7 @@
 #!/bin/bash
 
 for i in {0..3};do
-    sleep 30
+    sleep 120
     # 配置邮件地址
     subject="压测第$i次检测服务器[nvme]状态异常"
     body="服务器上的 fio 状态异常，详情如下：\n"
