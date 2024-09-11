@@ -1,6 +1,7 @@
 #!/bin/bash
 
 sleep 120
+
 for i in {1..5};do
     # 配置邮件地址
     subject="压测第$i次检测服务器[nvme]状态异常"
