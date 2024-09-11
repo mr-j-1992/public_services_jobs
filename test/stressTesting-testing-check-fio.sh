@@ -11,7 +11,7 @@ for i in {1..5};do
 
     # 检查日志文件中的内容
     if grep -qiE "error|fail" "$LOG1" "$LOG2"; then
-        errolog=$(grep -iE "error|fail" "$LOG1" "$LOG2")
+        errorlog=$(grep -iE "error|fail" "$LOG1" "$LOG2")
         body="${body} - $errorlog\n"
         echo -e "$body" | mail -s "$subject" "$recipient"
     else
