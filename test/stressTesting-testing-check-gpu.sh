@@ -1,9 +1,6 @@
 #!/bin/bash
 for i in {0..2};do
     sleep 30
-    expected_gpu_count=8
-    # 配置邮件地址
-    recipient="lvjiang@dayudpu.com"
     subject="压测第$i次检测服务器[GPU]状态异常"
     body="服务器上的NVIDIA GPU状态异常，详情如下：\n"
 
