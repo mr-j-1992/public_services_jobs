@@ -1,6 +1,6 @@
 #!/bin/bash
 
-subject="服务器[GPU]压测后状态FAIL"
+subject="!!!服务器[GPU]压测后状态FAIL!!!"
 body="服务器上的NVIDIA GPU状态FAIL，详情如下：\n"
 
 # 检查dcgmi日志是否有错误
