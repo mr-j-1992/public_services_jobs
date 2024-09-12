@@ -3,6 +3,7 @@
 #加载环境变量
 source /tmp/public_services_jobs/test/stressTesting-variables.sh
 #测试之间检查初始状态
+bash /tmp/public_services_jobs/test/stressTesting-before-ping.sh
 bash /tmp/public_services_jobs/test/stressTesting-before-gpu.sh
 bash /tmp/public_services_jobs/test/stressTesting-before-nvme.sh
 
