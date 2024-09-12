@@ -17,7 +17,7 @@ for i in {1..5};do
     fi
 
     # 检查是否有错误
-    errors=$(echo "$nvidia_output" | grep -i "error")
+    errors=$(echo "$nvidia_output" | grep -i "err")
     if [ -n "$errors" ]; then
         body="${body} - 检测到错误信息: $errors\n"
     fi
