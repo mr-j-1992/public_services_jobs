@@ -11,6 +11,20 @@ EMAIL="lvjiang@dayudpu.com"  # 替换为你接收邮件的邮箱
 subject="!!!服务器[nvme]压测后状态FAIL!!!"
 
 kill -s 15 `ps -ef | grep big-file-rand-read | grep -v "grep" | awk '{print $2}'`
+
+
+LOG1="/tmp/public_services_jobs/test/fionvme0.log"
+LOG2="/tmp/public_services_jobs/test/fionvme1.log"
+
+# 检查日志文件中的内容
+if grep -qiE "error|fail" "$LOG1" "$LOG2"; then
+    errorlog=$(grep -iE "error|fail" "$LOG1" "$LOG2")
+    body="fio错误日志 - $errorlog\n"
+    echo -e "$body" | mail -s "$subject" "$recipient"
+    exit 1
+fi
+
+
 umount $MOUNT_POINT1
 umount $MOUNT_POINT2
 umount $DEVICE1
