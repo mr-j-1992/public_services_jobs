@@ -7,8 +7,8 @@ for i in {1..5};do
     subject="!!!压测第$i次检测服务器[nvme]状态FAIL!!!"
     body="服务器上的 fio 状态FAIL，详情如下：\n"
 
-    LOG1="/tmp/public_services_jobs/test/fionvme0.log"
-    LOG2="/tmp/public_services_jobs/test/fionvme1.log"
+    LOG1="/root/stress/fionvme0.log"
+    LOG2="/root/stress/fionvme1.log"
 
     # 检查日志文件中的内容
     if grep -qiE "error|fail" "$LOG1" "$LOG2"; then
