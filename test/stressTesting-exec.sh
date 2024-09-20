@@ -25,3 +25,6 @@ sleep 1800
 bash /tmp/public_services_jobs/test/stressTesting-after-gpu.sh
 bash /tmp/public_services_jobs/test/stressTesting-after-nvme.sh
 
+#内存测试
+bash /tmp/public_services_jobs/test/stressTesting-testing-memtester.sh
+
