@@ -13,8 +13,8 @@ subject="!!!服务器[nvme]压测后状态FAIL!!!"
 kill -s 15 `ps -ef | grep big-file-rand-read | grep -v "grep" | awk '{print $2}'`
 
 
-LOG1="/tmp/public_services_jobs/test/fionvme0.log"
-LOG2="/tmp/public_services_jobs/test/fionvme1.log"
+LOG1="/root/stress/fionvme0.log"
+LOG2="/root/stress/fionvme1.log"
 
 # 检查日志文件中的内容
 if grep -qiE "error|fail" "$LOG1" "$LOG2"; then
