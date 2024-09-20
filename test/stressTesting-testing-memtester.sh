@@ -8,6 +8,6 @@ count=20
 
 for i in $(seq 0 $((count - 1)))
 do
-    nohup memtester $((491520 / count)) 1 > /root/stress/memtester$i.log 2>&1 &
+    nohup memtester $((491520 / count)) 2 > /root/stress/memtester$i.log 2>&1 &
     sleep 5
 done
