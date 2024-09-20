@@ -28,12 +28,17 @@ for i in {1..5};do
         body="${body} - 检测到风扇或者CPU 0%: $errors\n"
     fi
 
-
-    # 检查功率是否为 450W
-    power_450w=$(echo "$nvidia_output" | grep -c "450W")
+    # 检查功率是否正确（4090 450W/4090D 425W）
+    is4090d=$(echo "$nvidia_output" | grep -i "4090 D")
+    if [ -n "$is4090d" ]; then
+        power_450w=$(echo "$nvidia_output" | grep -c "425W")
+    else
+        power_450w=$(echo "$nvidia_output" | grep -c "450W")
+    fi
     if [ "$power_450w" -ne "$expected_gpu_count" ]; then
         body="${body} - 检测到卡的功率不等于 450W\n"
     fi
+    
 
     temps=$(nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits)
     # 初始化标志为 pass
