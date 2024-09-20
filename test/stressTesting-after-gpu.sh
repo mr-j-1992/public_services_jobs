@@ -4,7 +4,7 @@ subject="!!!服务器[GPU]压测后状态FAIL!!!"
 body="服务器上的NVIDIA GPU状态FAIL，详情如下：\n"
 
 # 检查dcgmi日志是否有错误
-LOG1="/tmp/public_services_jobs/test/dcgmi.log"
+LOG1="/root/stress/dcgmi.log"
 # 检查日志文件中的内容
 if grep -qiE "error|fail" "$LOG1" ; then
     errorlog=$(grep -iE "error|fail" "$LOG1")
