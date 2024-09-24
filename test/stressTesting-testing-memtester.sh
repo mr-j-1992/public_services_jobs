@@ -4,7 +4,7 @@ apt install memtester -y
 sleep 5
 
 # 定义循环次数
-count=48
+count=96
 
 for i in $(seq 0 $((count - 1)))
 do
