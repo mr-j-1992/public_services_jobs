@@ -29,5 +29,6 @@ bash /tmp/public_services_jobs/test/stressTesting-after-gpu.sh
 bash /tmp/public_services_jobs/test/stressTesting-after-nvme.sh
 
 #内存测试
+nohup bash /tmp/public_services_jobs/test/stressTesting-testing-check-memtest.sh &
 bash /tmp/public_services_jobs/test/stressTesting-testing-memtester.sh
 
