@@ -28,5 +28,5 @@ for i in {1..2};do
         body="服务器上的内存状态PASS，详情如下：\n"
         echo -e "$body" | mail -s "$subject" "$recipient"
     fi
-    sleep  8400
+    sleep  8100
 done
