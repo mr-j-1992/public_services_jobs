@@ -11,7 +11,7 @@ if [ "$total_mem" -lt 500 ]; then
 fi
 
 # 如果 body 发生了变化，说明有FAIL，发送邮件
-if [ "$body" != "服务器上的 内存 状态FAIL，详情如下：\n" ]; then
+if [ "$body" != "服务器上的内存状态FAIL，详情如下：\n" ]; then
     echo -e "$body" | mail -s "$subject" "$recipient"
 else
     subject="服务器[内存]初始状态PASS"
