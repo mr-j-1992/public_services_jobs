@@ -9,6 +9,7 @@ mkdir -p /root/stress
 bash /tmp/public_services_jobs/test/stressTesting-before-gpu.sh
 bash /tmp/public_services_jobs/test/stressTesting-before-ping.sh
 bash /tmp/public_services_jobs/test/stressTesting-before-nvme.sh
+bash /tmp/public_services_jobs/test/stressTesting-before-mem.sh
 
 #先执行检测脚本，脚本中sleep 120s后开始，也就是下面压力测试开始后就检测一次
 nohup bash /tmp/public_services_jobs/test/stressTesting-testing-check-gpu.sh &
