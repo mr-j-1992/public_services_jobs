@@ -30,7 +30,7 @@ for i in {1..5};do
     fi
     if ! pgrep memtester > /dev/null; then
         # 如果 memtester 进程不存在，发送邮件通知
-        subject="服务器上的内存测试完成"
+        subject="服务器压测内存测试完成"
         body=$(free -g)
         echo "$body" | mail -s "$subject" "$recipient"
         exit
