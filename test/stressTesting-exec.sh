@@ -5,7 +5,7 @@ source /tmp/public_services_jobs/test/stressTesting-variables.sh
 #日志记录到 /root/stress目录
 mkdir -p /root/stress
 
-#测试之间检查初始状态
+#测试之前检查初始状态
 bash /tmp/public_services_jobs/test/stressTesting-before-gpu.sh
 bash /tmp/public_services_jobs/test/stressTesting-before-ping.sh
 bash /tmp/public_services_jobs/test/stressTesting-before-nvme.sh
