@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sleep 1200
+sleep 600
 
 for i in {1..5};do
     subject="!!!压测第$i次检测服务器[内存]状态FAIL!!!"
