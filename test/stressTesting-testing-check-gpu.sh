@@ -3,7 +3,7 @@
 sleep 120
 
 for i in {1..5};do
-    subject="!!!压测第$i次检测服务器[GPU]状态FAIL!!!"
+    subject="!!!压测第$i次检测服务器 $BMC_IP [GPU]状态FAIL!!!"
     body="服务器上的NVIDIA GPU状态FAIL，详情如下：\n"
 
     # 运行 nvidia-smi 并保存输出
@@ -54,7 +54,7 @@ for i in {1..5};do
         body="${body} - $nvidia_output"
         echo -e "$body" | mail -s "$subject" "$recipient"
     else
-        subject="压测第$i次检测服务器[GPU]状态PASS"
+        subject="压测第$i次检测服务器 $BMC_IP [GPU]状态PASS"
         body="服务器上的NVIDIA GPU状态PASS，详情如下：\n"
         body="${body} - $nvidia_output"
         echo -e "$body" | mail -s "$subject" "$recipient"
