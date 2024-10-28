@@ -1,6 +1,6 @@
 #!/bin/bash
 
-subject="!!!服务器[内存]初始状态FAIL!!!"
+subject="!!!服务器 $BMC_IP [内存]初始状态FAIL!!!"
 body="服务器上的内存状态FAIL，详情如下：\n"
 
 # 检查总内存
@@ -14,7 +14,7 @@ fi
 if [ "$body" != "服务器上的内存状态FAIL，详情如下：\n" ]; then
     echo -e "$body" | mail -s "$subject" "$recipient"
 else
-    subject="服务器[内存]初始状态PASS"
+    subject="服务器 $BMC_IP [内存]初始状态PASS"
     body="服务器上的内存状态PASS，详情如下：\n"
     echo -e "$body" | mail -s "$subject" "$recipient"
 fi
