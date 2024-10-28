@@ -5,6 +5,9 @@ source /tmp/public_services_jobs/test/stressTesting-variables.sh
 #日志记录到 /root/stress目录
 mkdir -p /root/stress
 
+apt install -y ipmitool
+export BMC_IP=$(ipmitool lan print | awk '/IP Address Source/ {getline; print $4}')
+
 #测试之前检查初始状态
 bash /tmp/public_services_jobs/test/stressTesting-before-gpu.sh
 bash /tmp/public_services_jobs/test/stressTesting-before-ping.sh
