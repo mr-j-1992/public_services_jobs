@@ -3,7 +3,7 @@
 sleep 600
 
 for i in {1..5};do
-    subject="!!!压测第$i次检测服务器[内存]状态FAIL!!!"
+    subject="!!!压测第$i次检测服务器 $BMC_IP [内存]状态FAIL!!!"
     body="服务器上的 内存 状态FAIL，详情如下：\n"
 
     # 检查总内存
@@ -24,13 +24,13 @@ for i in {1..5};do
     if [ "$body" != "服务器上的 内存 状态FAIL，详情如下：\n" ]; then
         echo -e "$body" | mail -s "$subject" "$recipient"
     else
-        subject="压测第$i次检测服务器[内存]状态PASS"
+        subject="压测第$i次检测服务器 $BMC_IP [内存]状态PASS"
         body="服务器上的内存状态PASS，详情如下：\n"
         echo -e "$body" | mail -s "$subject" "$recipient"
     fi
     if ! pgrep memtester > /dev/null; then
         # 如果 memtester 进程不存在，发送邮件通知
-        subject="服务器压测内存测试完成"
+        subject="服务器 $BMC_IP 压测内存测试完成"
         body=$(free -g)
         echo "$body" | mail -s "$subject" "$recipient"
         exit
