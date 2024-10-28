@@ -1,6 +1,6 @@
 #!/bin/bash
 
-subject="!!!服务器[GPU]初始状态FAIL!!!"
+subject="!!!服务器 $BMC_IP [GPU]初始状态FAIL!!!"
 body="服务器上的NVIDIA GPU状态FAIL，详情如下：\n"
 
 # 运行 nvidia-smi 并保存输出
@@ -35,7 +35,7 @@ if [ "$body" != "服务器上的NVIDIA GPU状态FAIL，详情如下：\n" ]; the
     body="${body} - $nvidia_output"
     echo -e "$body" | mail -s "$subject" "$recipient"
 else
-    subject="服务器[GPU]初始状态PASS"
+    subject="服务器 $BMC_IP [GPU]初始状态PASS"
     body="服务器上的NVIDIA GPU状态PASS，详情如下：\n"
     body="${body} - $nvidia_output"
     echo -e "$body" | mail -s "$subject" "$recipient"
