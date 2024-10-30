@@ -15,7 +15,7 @@ for i in {1..5};do
 
     # 检查日志文件中是否有 'fail' 或 'err'
     log_files="/root/stress/memtester*.log"    
-    if grep -q -E 'fail|err' $log_files; then
+    if grep -i -E 'fail|err' $log_files; then
         errors=$(grep -i  -E 'fail|err' $log_files)
         body="${body} - 检测到错误信息: $errors\n"
     fi
