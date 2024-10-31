@@ -19,7 +19,13 @@ for i in {1..5};do
         errors=$(grep -i  -E 'fail|err' $log_files)
         body="${body} - 检测到错误信息: $errors\n"
     fi
-
+    
+    # 检查dmesg 如果有MCE告警，写入邮件内容
+    if dmesg | grep -i "mce"; then
+        errors=$(dmesg | grep -i "mce")
+        body="${body} - 检测到错误信息: $errors\n"
+    fi
+    
     # 如果 body 发生了变化，说明有FAIL，发送邮件
     if [ "$body" != "服务器上的 内存 状态FAIL，详情如下：\n" ]; then
         echo -e "$body" | mail -s "$subject" "$recipient"
