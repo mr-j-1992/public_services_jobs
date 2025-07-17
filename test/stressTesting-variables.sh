@@ -2,7 +2,7 @@
 
 #export recipient="lvjiang@dayudpu.com"
 #export recipient="lvjiang@dayudpu.com,xuebaoku@dayudpu.com,wangjiayu@dayudpu.com"
-export recipient="lvjiang@dayudpu.com,wangjiayu@dayudpu.com"
+export recipient="lvjiang@dayudpu.com,wangjiayu@dayudpu.com,yangjianguo@dayudpu.com"
 export expected_gpu_count=8
 #压测总时间大概 25小时
 #GPU nvme(fio)时间
