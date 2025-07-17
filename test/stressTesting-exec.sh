@@ -5,7 +5,10 @@ source /tmp/public_services_jobs/test/stressTesting-variables.sh
 #日志记录到 /root/stress目录
 mkdir -p /root/stress
 
-sudo NEEDRESTART_MODE=a apt install -y ipmitool
+#20250717 修改命令
+#sudo NEEDRESTART_MODE=a apt install -y ipmitool
+sudo NEEDRESTART_MODE=apt install -y ipmitool
+
 export BMC_IP=$(ipmitool lan print | awk '/IP Address Source/ {getline; print $4}')
 
 #测试之前检查初始状态
