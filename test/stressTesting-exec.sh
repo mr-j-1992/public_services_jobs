@@ -7,7 +7,7 @@ mkdir -p /root/stress
 
 #20250717 修改命令
 #sudo NEEDRESTART_MODE=a apt install -y ipmitool
-sudo NEEDRESTART_MODE=apt install -y ipmitool
+apt install -y ipmitool
 
 export BMC_IP=$(ipmitool lan print | awk '/IP Address Source/ {getline; print $4}')
 
