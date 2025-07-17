@@ -4,7 +4,10 @@ subject="!!!服务器 $BMC_IP [GPU]初始状态FAIL!!!"
 body="服务器上的NVIDIA GPU状态FAIL，详情如下：\n"
 
 # 运行 nvidia-smi 并保存输出
+# 20250717 获取 UUID
 nvidia_output=$(nvidia-smi)
+nvidia_detail=$(nvidia-smi -q | egrep 'GPU UUID|Bus Id')
+
 
 # 检查 GPU 数量
 gpu_count=$(echo "$nvidia_output" | grep -c "NVIDIA GeForce") # 使用正则表达式寻找GPU信息
@@ -37,6 +40,7 @@ if [ "$body" != "服务器上的NVIDIA GPU状态FAIL，详情如下：\n" ]; the
 else
     subject="服务器 $BMC_IP [GPU]初始状态PASS"
     body="服务器上的NVIDIA GPU状态PASS，详情如下：\n"
-    body="${body} - $nvidia_output"
-    echo -e "$body" | mail -s "$subject" "$recipient"
+    #body="${body} - $nvidia_output"
+    body="${body}\n详细GPU信息(UUID和Bus Id):\n${nvidia_detail}\n\n完整nvidia-smi输出:\n$nvidia_output"
+    echo -e "$body" | mail -s "$subject" "$recipient"    
 fi
