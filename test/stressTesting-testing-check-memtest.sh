@@ -21,7 +21,8 @@ for i in {1..5};do
     fi
     
     # 检查dmesg 如果有MCE告警，写入邮件内容
-    if dmesg | grep -i "mce"; then
+    # 20250718 检测结果删除内存 log开启日志
+    if dmesg | grep -i "mce" | grep -v 'MCE decoding enabled'; then
         errors=$(dmesg | grep -i "mce")
         body="${body} - 检测到错误信息: $errors\n"
     fi
